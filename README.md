@@ -1,1 +1,1 @@
-# Verkkokauppa_backend
+# VerkkokauppaBackend
