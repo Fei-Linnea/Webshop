@@ -1,0 +1,6 @@
+POST http://localhost:3001/api/carts/67a4c0b55c71b7b9c0f39123/remove
+Content-Type: application/json
+
+{
+    "productId": "679cc9ed9007ede2a8ad6afb"
+}

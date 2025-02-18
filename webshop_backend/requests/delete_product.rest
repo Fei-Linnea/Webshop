@@ -1,0 +1,3 @@
+DELETE http://localhost:3001/api/products/67a492175ee694358fe703d5
+
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imphbm5lQGV4YW1wbGUuY29tIiwiaWQiOiI2NzliOTE4NGZkOTQ1Njc3YzI0NDBiNzgiLCJpYXQiOjE3MzgzMTU2OTl9.vw8ZYmPlmiDV_EDDK1KDKSJ-t2qDwVat-Wjxbb8PIlE

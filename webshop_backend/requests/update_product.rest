@@ -1,0 +1,9 @@
+PUT http://localhost:3001/api/products/678e76b38b87ae358d821574
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaWNlQGV4YW1wbGUuY29tIiwiaWQiOiI2NzliOTA4OWZkOTQ1Njc3YzI0NDBiNjUiLCJpYXQiOjE3MzgyNDkxNDJ9.B7NPyORE2bhhswS6nBpgjIOZEZiWLhvlugsXDX1NSaw
+
+{
+  "name": "Headphones",
+  "price": 100,
+  "stock": 40
+}

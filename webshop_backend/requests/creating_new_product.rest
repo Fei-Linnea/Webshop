@@ -1,0 +1,13 @@
+POST http://localhost:3001/api/products/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFsaWNlQGV4YW1wbGUuY29tIiwiaWQiOiI2N2FkZjYxMmJiZGFiMDVjNjRlNDdlMjAiLCJpYXQiOjE3Mzk0NTQwMDR9.2oHnEh64pj3_YvY4hpgSak9yE-OXYWOUFbu7ljQPjqQ
+
+
+{
+  "name": "Cap",
+  "brand": "Adidas",
+  "description": "Green cap",
+  "price": 20.95,
+  "stock": 3,
+  "category": "Clothing"
+}

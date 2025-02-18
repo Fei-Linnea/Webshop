@@ -1,0 +1,39 @@
+{
+  "products" : [
+    { 
+      "name": "Laptop", 
+      "price": 1200, 
+      "description": "High-performance laptop", 
+      "stock": 10, 
+      "category": "Electronics"
+    },
+    { 
+      "name": "Phone", 
+      "price": 800, 
+      "description": "Smartphone with great features", 
+      "stock": 15, 
+      "category": "Electronics" 
+    },
+    { 
+      "name": "Headphones", 
+      "price": 150, 
+      "description": "Noise-cancelling headphones", 
+      "stock": 20, 
+      "category": "Electronics" 
+    },
+    { 
+      "name": "T-shirt", 
+      "price": 20, 
+      "description": "Comfortable t-shirt", 
+      "stock": 50, 
+      "category": "Clothing" 
+    },
+    { 
+      "name": "Jeans", 
+      "price": 50, 
+      "description": "High-quality jeans", 
+      "stock": 30, 
+      "category": "Clothing" 
+    }
+  ]
+}

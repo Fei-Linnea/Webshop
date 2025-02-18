@@ -1,0 +1,6 @@
+PUT http://localhost:3001/api/carts/678e76b38b87ae358d82156a/678e76b38b87ae358d821573
+Content-Type: application/json
+
+{
+  "quantity": 3
+}

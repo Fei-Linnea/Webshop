@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/carts/67a4bdd88c6eb22674d9a287
+Content-Type: application/json
+
+{
+  "productId": "679cc9ed9007ede2a8ad6afc",
+  "quantity": 1
+}
