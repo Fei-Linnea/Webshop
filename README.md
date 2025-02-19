@@ -13,7 +13,7 @@ The **Contact Us** page enables users to send messages to the maintenance team.
 ### Tech Stack
 - **Language:** JavaScript  
 - **Frontend:** React, React Router, CSS  
-- **Backend:** Node.js, Express.js, MongoDB Atlas  
+- **Backend:** Node.js, Express, MongoDB Atlas  
 - **State Management:** useState, useEffect  
 - **Authentication:** JSON Web Token (JWT)  
 - **RESTful API Requests:** Axios  
