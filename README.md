@@ -25,7 +25,10 @@ The **Contact Us** page enables users to send messages to the maintenance team.
   - All users: View products.  
   - Admins: Create, update and delete products.  
 - **Shopping Cart:** Add products, adjust quantities and remove products.  
-- **Contact Us Form:** Send a contact message to maintenance.  
+- **Contact Us Form:** Send a contact message to maintenance.
+- **Notifications:**  
+  - A notification message is displayed when an action is successfully completed.  
+  - An error message appears if an error occurs.    
 
 ## Notice  
 This application is still in development and lacks some implementations, such as product images and a CSS styling library. Additional features may be added in the future.  
