@@ -30,5 +30,8 @@ The **Contact Us** page enables users to send messages to the maintenance team.
   - A notification message is displayed when an action is successfully completed.  
   - An error message appears if an error occurs.    
 
+## Images
+Product images are from [Unsplash](https://unsplash.com/).
+
 ## Notice  
-This application is still in development and lacks some implementations. Additional features may be added in the future. 
+This application is still in development and lacks some implementations. Additional features may be added in the future. Images are from
