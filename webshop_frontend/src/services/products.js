@@ -19,7 +19,7 @@ const getProduct = async (id) => {
 
 const create = async (newProduct) => {
   const config = {
-    headers: { Authorization: token },
+    headers: { Authorization: token, 'Content-Type': 'application/json', },
   }
   const response = await axios.post(baseUrl, newProduct, config)
   return response.data

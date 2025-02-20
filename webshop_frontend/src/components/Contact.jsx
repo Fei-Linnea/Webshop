@@ -41,7 +41,7 @@ const Contact = ({ user, setErrorMessage, setMessage }) => {
 
   return (
     <div>
-      <h2>Contact Us</h2>
+      <h1>Contact Us</h1>
       <p>Have a question or need assistance? Send us a message!</p>
       <form onSubmit={handleSubmit}>
         <div>

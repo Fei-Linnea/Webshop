@@ -31,4 +31,4 @@ The **Contact Us** page enables users to send messages to the maintenance team.
   - An error message appears if an error occurs.    
 
 ## Notice  
-This application is still in development and lacks some implementations, such as product images (uploading them to Cloudinary) and a CSS styling library. Additional features may be added in the future. 
+This application is still in development and lacks some implementations. Additional features may be added in the future. 

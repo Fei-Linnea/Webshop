@@ -1,13 +1,35 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 const UpdatingProduct = ({ product, updateProduct }) => {
-  const [name, setName] = useState('')
-  const [brand, setBrand] = useState('')
-  const [description, setDescription] = useState('')
-  const [price, setPrice] = useState('')
+  const [name, setName] = useState(product.name)
+  const [brand, setBrand] = useState(product.brand)
+  const [description, setDescription] = useState(product.description)
+  const [price, setPrice] = useState(product.price)
   const [image, setImage] = useState('')
-  const [stock, setStock] = useState('')
-  const [category, setCategory] = useState('')
+  const [stock, setStock] = useState(product.stock)
+  const [category, setCategory] = useState(product.category)
+  const [uploading, setUploading] = useState(false)
+
+  const handleImageUpload = async (event) => {
+    const file = event.target.files[0]
+    if (!file) return
+    
+    setUploading(true)
+    const formData = new FormData()
+    formData.append('file', file)
+    formData.append('upload_preset', 'product_images')
+
+    try {
+      const response = await axios.post('https://api.cloudinary.com/v1_1/dqaxnzlpa/image/upload', formData)
+      setUploading(false)
+      setImage(response.data.secure_url)
+    } catch (error) {
+      setUploading(false)
+      console.error('Error uploading image:', error)
+      alert('Image upload failed!')
+    }
+  }
 
   const update = (event) => {
       event.preventDefault()
@@ -72,12 +94,13 @@ const UpdatingProduct = ({ product, updateProduct }) => {
           />
         </div>
         <div>
-          <label htmlFor="image">Image URL:</label>
-          <input
-            id="image"
-            value={image}
-            onChange={(e) => setImage(e.target.value)} placeholder="https://example.com/image.jpg"
-          />
+          <label htmlFor="imageUpload">Upload a new image:</label>
+          <input 
+          id="imageUpload" 
+          type="file" 
+          accept="image/*" 
+          onChange={handleImageUpload} 
+          /> {uploading && <p>Uploading image...</p>}
         </div>
         <div>
           <label htmlFor="stock">Stock:</label>
