@@ -1,21 +1,22 @@
 import PropTypes from 'prop-types'
 
-const Cart = ({ removeItem, updateQuantity, cartItems, user }) => {
+const Cart = ({ removeItem, updateQuantity, cartItems, user, products }) => {
     const totalPrice = Math.round(
         cartItems.reduce((sum, product) => sum + product.productId.price * product.quantity, 0) * 100
     ) / 100
     console.log('cartItems:', cartItems)
     
     return (
-        <div>
-        <h2>Shopping Cart</h2>
-        <ul>
-            {cartItems.length === 0 ? <p>Cart is empty</p> : cartItems.map(product => (
+        <div className="cart-page">
+        <h2 className="cart-title">Shopping Cart</h2>
+        <ul className="cart-item-list">
+            {cartItems.length === 0 ? <p className="empty-cart-message">Cart is empty</p> : cartItems.map(product => (
             <li key={product.productId.id} className="cart-item">
-                <h3>{product.productId.name}</h3>
-                <p>Price: {product.productId.price} €</p>
-                <p>Stock: {product.productId.stock} kpl</p>
-                <p>
+                <img src={product.productId.image} alt={product.productId.name} className="cart-item-image"/>
+                <h3 className="cart-item-name">{product.productId.name}</h3>
+                <p className="cart-item-price">Price: {product.productId.price} €</p>
+                <p className="cart-item-stock">Stock: {product.productId.stock} kpl</p>
+                <p className="cart-item-quantity">
                 Quantity: 
                 <input 
                     type="number" 
@@ -30,12 +31,12 @@ const Cart = ({ removeItem, updateQuantity, cartItems, user }) => {
                     }
                 />
                 </p>
-                <button onClick={() => removeItem(user.id, product.productId.id, user.token)}>Remove</button>
+                <button className="remove-btn" onClick={() => removeItem(user.id, product.productId.id, user.token)}>Remove</button>
             </li>
             ))}
         </ul>
-        <h3>Total price: {totalPrice} €</h3>
-        <button>Proceed to Payment</button>
+        <h3 className="cart-total-price">Total price: {totalPrice} €</h3>
+        <button className="proceed-btn">Proceed to Payment</button>
         </div>
     )
 }

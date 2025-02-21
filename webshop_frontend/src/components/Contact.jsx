@@ -40,11 +40,11 @@ const Contact = ({ user, setErrorMessage, setMessage }) => {
   }
 
   return (
-    <div>
+    <div className="contact-form-container">
       <h1>Contact Us</h1>
       <p>Have a question or need assistance? Send us a message!</p>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="contact-form">
+        <div className="form-group">
           <label htmlFor="name">Name: </label>
           <input
             id="name"
@@ -55,7 +55,7 @@ const Contact = ({ user, setErrorMessage, setMessage }) => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="email">Email: </label>
           <input
             id="email"
@@ -66,7 +66,7 @@ const Contact = ({ user, setErrorMessage, setMessage }) => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
         <label htmlFor="category">Category: </label>
         <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="Bug Report">Bug Report</option>
@@ -80,7 +80,7 @@ const Contact = ({ user, setErrorMessage, setMessage }) => {
             <option value="Other">Other</option>
         </select>
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="subject">Subject: </label>
           <input
             id="subject"
@@ -91,7 +91,7 @@ const Contact = ({ user, setErrorMessage, setMessage }) => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="message content">Message content: </label>
           <textarea
             id="message content"
@@ -101,7 +101,7 @@ const Contact = ({ user, setErrorMessage, setMessage }) => {
             required
           />
         </div>
-        <button type="submit">Send Message</button>
+        <button type="submit" className="submit-btn">Send Message</button>
       </form>
     </div>
   )

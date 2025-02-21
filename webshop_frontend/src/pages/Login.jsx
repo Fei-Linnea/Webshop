@@ -36,11 +36,11 @@ const Login = ({ setUser, setErrorMessage }) => {
   }
  
   return (
-      <div>
+      <div className="login-container">
       <h2>Log in to Webshop</h2>
       <form onSubmit={handleLogin}>
-          <div>
-          Email
+          <div className="login-group">
+          <label>Email</label>
           <input
               type="text"
               value={email}
@@ -48,8 +48,8 @@ const Login = ({ setUser, setErrorMessage }) => {
               onChange={({ target }) => setEmail(target.value)}
           />
           </div>
-          <div>
-          Password
+          <div className='login-group'>
+          <label>Password</label>
           <input
               type="password"
               value={password}
@@ -57,7 +57,7 @@ const Login = ({ setUser, setErrorMessage }) => {
               onChange={({ target }) => setPassword(target.value)}
           />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className="login-btn">Login</button>
       </form>
       </div>
   )
