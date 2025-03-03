@@ -34,4 +34,4 @@ The **Contact Us** page enables users to send messages to the maintenance team.
 Product images are from [Unsplash](https://unsplash.com/).
 
 ## Notice  
-This application is still in development and lacks some implementations. Additional features may be added in the future. Images are from
+This application is still in development. Additional features may be added in the future.
