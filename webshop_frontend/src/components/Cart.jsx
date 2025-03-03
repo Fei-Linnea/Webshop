@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
 
-const Cart = ({ removeItem, updateQuantity, cartItems, user, products }) => {
+const Cart = ({ removeItem, updateQuantity, cartItems, user }) => {
     const totalPrice = Math.round(
         cartItems.reduce((sum, product) => sum + product.productId.price * product.quantity, 0) * 100
     ) / 100
-    console.log('cartItems:', cartItems)
     
     return (
         <div className="cart-page">
@@ -36,7 +35,7 @@ const Cart = ({ removeItem, updateQuantity, cartItems, user, products }) => {
             ))}
         </ul>
         <h3 className="cart-total-price">Total price: {totalPrice} €</h3>
-        <button className="proceed-btn">Proceed to Payment</button>
+        <button className="proceed-btn">Proceed to payment</button>
         </div>
     )
 }

@@ -28,7 +28,6 @@ const updateQuantity = async (userId, productId, quantity, token) => {
     productId: productId,
     quantity: quantity
   } 
-  console.log('Body:', body)
 
   const response = await axios.put(`${baseUrl}/${userId}`, body, config)
   return response.data

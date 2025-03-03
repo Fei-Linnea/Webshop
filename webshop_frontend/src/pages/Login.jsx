@@ -15,7 +15,6 @@ const Login = ({ setUser, setErrorMessage }) => {
         email: email, 
         password: password,
       })
-      console.log('User logged in:', user)
 
       window.localStorage.setItem(
         'loggedStoreappUser', JSON.stringify(user)

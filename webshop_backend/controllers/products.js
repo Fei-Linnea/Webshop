@@ -21,10 +21,8 @@ productsRouter.get('/:id', async (request, response) => {
 })
 
 productsRouter.post('/', authenticateUser, authorizeAdmin, async (request, response, next) => {
-    console.log("POST request received")
     try {
         const body = request.body
-
         const product = new Product({
             name: body.name,
             brand: body.brand,
@@ -34,9 +32,8 @@ productsRouter.post('/', authenticateUser, authorizeAdmin, async (request, respo
             stock: body.stock,
             category: body.category
         })
-    
-        const savedProduct = await product.save();
-        response.status(201).json(savedProduct);
+        const savedProduct = await product.save()
+        response.status(201).json(savedProduct)
     } catch (error) {
         console.error("Error saving product:", error)
         next(error)
@@ -55,7 +52,6 @@ productsRouter.delete('/:id', authenticateUser, authorizeAdmin, async (request, 
 productsRouter.put('/:id', authenticateUser, authorizeAdmin, async (request, response, next) => {
     try {
         const body = request.body
-  
         const product = {
             id: body.id,
             name: body.name,

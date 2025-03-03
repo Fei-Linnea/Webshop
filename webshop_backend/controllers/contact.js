@@ -12,14 +12,10 @@ contactRouter.get('/', async (request, response) => {
 
 contactRouter.post('/', async (request, response) => {
   const { name, email, category, subject, content } = request.body
-
-  // Validate required fields
   if (!subject || !content) {
-    return response.status(400).json({ message: 'Subject and message are required.' });
+    return response.status(400).json({ message: 'Subject and message are required.' })
   }
-
   try {
-    // Create a new contact message document
     const newMessage = new Contact({
       name,
       email,
@@ -27,15 +23,11 @@ contactRouter.post('/', async (request, response) => {
       subject,
       content,
     })
-
-    // Save the message to the database
     await newMessage.save()
-
-    // Respond with success
-    response.status(201).json({ message: 'Message received and saved successfully!' });
+    response.status(201).json({ message: 'Message received and saved successfully!' })
   } catch (error) {
-    console.error('Error saving message to database:', error);
-    response.status(500).json({ message: 'Failed to save the message. Please try again later.' });
+    console.error('Error saving message to database:', error)
+    response.status(500).json({ message: 'Failed to save the message. Please try again later.' })
   }
 })
 

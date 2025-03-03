@@ -28,14 +28,11 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
-// Tokenin haku
 const getTokenFrom = request => {
   const authorization = request.get('authorization')
-  console.log('Authorization header:', authorization)
   if (authorization && authorization.startsWith('Bearer ')) {
       return authorization.replace('Bearer ', '')
-  } 
-  console.log('Extracted token:', authorization.replace('Bearer ', '')) 
+  }  
   return null
 }
 
@@ -47,7 +44,6 @@ const authenticateUser = async (request, response, next) => {
     }
 
     const decodedToken = jwt.verify(token, process.env.SECRET)
-    console.log('Decoded token:', decodedToken) 
     if (!decodedToken.id) {
       return response.status(401).json({ error: 'invalid token' })
     }

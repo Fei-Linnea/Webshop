@@ -30,7 +30,6 @@ const App = () => {
     const loggedUserJSON = window.localStorage.getItem('loggedStoreappUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
-      console.log('User loaded from localStorage:', user)
       setUser(user)
       loginService.setToken(user.token)
     }
@@ -44,24 +43,18 @@ const App = () => {
   
   useEffect(() => {
     const fetchCart = async () => {
-      console.log("Stored user:", localStorage.getItem('loggedStoreappUser'))
         try {
           const storedUser = localStorage.getItem('loggedStoreappUser')
           if (!storedUser) {
             console.warn("No user found in localStorage")
             return
           }
-
           const user = JSON.parse(storedUser)
-
           if (!user?.id || !user?.token) {
             console.error("User ID or token is missing")
             return
           }
-
           const items = await cartService.getCart(user.id, user.token)
-          console.log("Fetched cart items:", items)
-            
           setCartItems(items?.products || [])
         } catch (error) {
             console.error('Error fetching cart:', error)
@@ -133,8 +126,6 @@ const App = () => {
           return
       }
       const updatedCart = await cartService.addToCart(user.id, product.id, 1, user.token)
-      console.log('updatedCart:', updatedCart)
-
       setCartItems(updatedCart.products) 
     } catch (error) {
         console.error('Error adding to cart:', error)
@@ -142,19 +133,15 @@ const App = () => {
   }
 
   const updateQuantity = async (userId, productId, quantity, token) => {
-    console.log('productId:', productId)
-    console.log('quantity:', quantity)
     if (quantity < 1) {
       quantity = 1
       return quantity
     }
     const product = await productService.getProduct(productId)
-
     if (quantity > product.stock) {
       showError(`Cannot add more than ${product.stock} items (stock limit)`)
       return
     }
-
     try {
       await cartService.updateQuantity(userId, productId, quantity, token)
       setCartItems(cartItems.map(item => item.productId.id === productId ? { ...item, quantity: quantity } : item))
@@ -162,7 +149,7 @@ const App = () => {
       console.error('Error updating quantity:', error)
     }
   }
-
+  
   const removeItem = async (userId, productId, token) => {
     try {
       await cartService.removeFromCart(userId, productId, token)

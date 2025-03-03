@@ -26,29 +26,22 @@ usersRouter.post('/', async (request, response, next) => {
   try {
     const existingUser = await User.findOne({ email })
     if (existingUser) {
-        return response.status(400).json({
-            error: 'email must be unique'
-          })
+      return response.status(400).json({error: 'email must be unique'})
     }
     const saltRounds = 10
     const passwordHash = await bcrypt.hash(password, saltRounds)
-    
     const user = new User({
       name,
       email,
       passwordHash,
       isAdmin
     })
-    
     const savedUser = await user.save()
     const cart = new Cart({
       userId: savedUser._id,
       products: []
     })
-
     await cart.save()
-    console.log("User's shopping cart created")
-
     savedUser.cart = cart._id
     await savedUser.save()
     response.status(201).json(savedUser)
@@ -65,7 +58,6 @@ usersRouter.delete('/:id', async (request, response) => {
     }
     if (user.cart) {
       await Cart.findByIdAndDelete(user.cart)
-      console.log("User's shopping cart deleted")
     }
     await User.findByIdAndDelete(request.params.id)
     response.status(204).end()
