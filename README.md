@@ -23,9 +23,9 @@ The **Contact Us** page enables users to send messages to the maintenance team.
 ## Features
 - **User authentication:** Register and log in using email and password.  
 - **Product management:**  
-  - All users: View products.  
+  - All users: View products and add a product to a shopping cart. 
   - Admins: Create, update and delete products.  
-- **Shopping cart:** Add products, adjust quantities and remove products.  
+- **Shopping cart:** Adjust quantities, remove products and view the total price.
 - **Contact us form:** Send a contact message to maintenance.
 - **Notifications:**  
   - A notification message is displayed when an action is successfully completed.  
