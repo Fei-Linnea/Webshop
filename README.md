@@ -2,7 +2,7 @@
 
 ## Overview
 ### Description
-Webshop is a full-stack web application that allows users to log in, log out, browse a list of products by selecting the **Products** menu and add products to their shopping cart.  
+Webshop is a full-stack web application that allows users to register, log in, log out, browse a list of products by selecting the **Products** menu and add products to their shopping cart.  
 
 Users can view their shopping cart by clicking the cart icon, which displays the number of items in the cart. The cart page allows users to adjust product quantities, remove selected items and view the total price of their selected products.  
 
