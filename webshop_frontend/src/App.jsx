@@ -172,7 +172,7 @@ const App = () => {
       <Notification message={message} />
       <Routes>
         <Route path="/login" element={user ? (<Navigate to="/" />) : 
-            (<Login setUser={setUser} setErrorMessage={setErrorMessage} />)} />
+            (<Login setUser={setUser} setErrorMessage={setErrorMessage} setMessage={setMessage} />)} />
         <Route path="/"  element={<Home />} />
         <Route path="/products" element={<ProductList user={user} products={products} 
         addProduct={addProduct} productFormRef={productFormRef} />} />

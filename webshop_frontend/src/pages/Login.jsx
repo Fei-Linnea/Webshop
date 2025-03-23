@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import loginService from '../services/login'
 import productService from '../services/products'
+import Register from '../components/register'
+import Togglable from '../components/Togglable'
 
-const Login = ({ setUser, setErrorMessage }) => {
+const Login = ({ setUser, setErrorMessage, setMessage }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [register, setRegister] = useState(true)
   const navigate = useNavigate()
 
   const handleLogin = async (event) => {
@@ -58,7 +61,11 @@ const Login = ({ setUser, setErrorMessage }) => {
           </div>
           <button type="submit" className="login-btn">Login</button>
       </form>
-      </div>
+      <Togglable buttonLabel="Register">
+        <Register onRegisterSuccess={() => setRegister(false)} setErrorMessage={setErrorMessage} 
+         setMessage={setMessage} />
+      </Togglable>
+    </div>
   )
 }
 
