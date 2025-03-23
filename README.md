@@ -13,25 +13,29 @@ The **Contact Us** page enables users to send messages to the maintenance team.
 ### Tech Stack
 - **Language:** JavaScript  
 - **Frontend:** React, React Router, CSS, Cloudinary
-- **Backend:** Node.js, Express, MongoDB Atlas  
-- **State Management:** useState, useEffect  
+- **Backend:** Node.js, Express, MongoDB Atlas
+- **State management:** useState, useEffect  
 - **Authentication:** JSON Web Token (JWT)  
 - **RESTful API Requests:** Axios  
-- **Testing:** Jest  
+- **Testing:** Jest
+- **Deployment:** Render
 
 ## Features
-- **User Authentication:** Register and log in using email and password.  
-- **Product Management:**  
-  - All users: View products.  
+- **User authentication:** Register and log in using email and password.  
+- **Product management:**  
+  - All users: View products and add a product to a shopping cart. 
   - Admins: Create, update and delete products.  
-- **Shopping Cart:** Add products, adjust quantities and remove products.  
-- **Contact Us Form:** Send a contact message to maintenance.
+- **Shopping cart:** Adjust quantities, remove products and view the total price.
+- **Contact us form:** Send a contact message to maintenance.
 - **Notifications:**  
   - A notification message is displayed when an action is successfully completed.  
   - An error message appears if an error occurs.    
 
 ## Images
 Product images are from [Unsplash](https://unsplash.com/).
+
+## A link to the Webshop
+You can access the webshop here: [Visit the Webshop](https://webshop-dzsm.onrender.com).
 
 ## Notice  
 This application is still in development. Additional features may be added in the future.
